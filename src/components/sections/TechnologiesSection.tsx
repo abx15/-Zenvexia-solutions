@@ -70,39 +70,39 @@ const TechnologiesSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12"
         >
-          <span className="text-sm font-medium text-muted-foreground uppercase tracking-widest">Tech Stack</span>
-          <h2 className="heading-lg mt-4 mb-6">
+          <span className="text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-widest">Tech Stack</span>
+          <h2 className="heading-lg mt-3 sm:mt-4 mb-3 sm:mb-6 text-3xl sm:text-4xl md:text-5xl">
             Technologies We Use
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto px-2">
             We leverage the latest technologies and frameworks to build robust, scalable, and future-proof solutions for our clients.
           </p>
         </motion.div>
 
         {/* Technologies Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
           {technologies.map((category, categoryIndex) => (
             <motion.div
               key={category.category}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.1 * categoryIndex }}
-              className="bg-background rounded-3xl p-6 border border-border"
+              className="bg-background rounded-2xl sm:rounded-3xl p-4 sm:p-6 border border-border"
             >
-              <h3 className="text-lg font-semibold mb-6 text-center">{category.category}</h3>
-              <div className="grid grid-cols-2 gap-3">
+              <h3 className="text-base sm:text-lg font-semibold mb-4 sm:mb-6 text-center">{category.category}</h3>
+              <div className="grid grid-cols-2 gap-2 sm:gap-3">
                 {category.items.map((item, itemIndex) => (
                   <motion.div
                     key={item.name}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={isInView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.3, delay: 0.1 * categoryIndex + 0.05 * itemIndex }}
-                    className="flex items-center gap-3 p-3 rounded-xl bg-secondary/50 hover:bg-primary/10 transition-colors group"
+                    className="flex items-center gap-2 sm:gap-3 p-2 sm:p-3 rounded-lg sm:rounded-xl bg-secondary/50 hover:bg-primary/10 transition-colors group"
                   >
-                    <span className="text-xl">{item.icon}</span>
-                    <span className="text-sm font-medium text-foreground">{item.name}</span>
+                    <span className="text-base sm:text-xl">{item.icon}</span>
+                    <span className="text-xs sm:text-sm font-medium text-foreground truncate">{item.name}</span>
                   </motion.div>
                 ))}
               </div>
@@ -115,15 +115,15 @@ const TechnologiesSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="mt-16 text-center"
+          className="mt-8 sm:mt-12 md:mt-16 text-center"
         >
-          <div className="inline-flex items-center gap-4 bg-primary/20 rounded-full px-8 py-4">
-            <span className="text-sm font-medium text-foreground">Our Core Stack:</span>
-            <div className="flex items-center gap-3">
+          <div className="inline-flex flex-col sm:flex-row items-center gap-2 sm:gap-3 md:gap-4 bg-primary/20 rounded-full px-4 sm:px-6 md:px-8 py-3 sm:py-4">
+            <span className="text-xs sm:text-sm font-medium text-foreground">Our Core Stack:</span>
+            <div className="flex items-center gap-2 sm:gap-3 flex-wrap justify-center">
               {['MongoDB', 'Express', 'React', 'Node'].map((tech, index) => (
                 <span
                   key={tech}
-                  className="bg-background px-4 py-2 rounded-full text-sm font-semibold text-foreground"
+                  className="bg-background px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold text-foreground whitespace-nowrap"
                 >
                   {tech}
                 </span>

@@ -59,33 +59,33 @@ const WhyChooseUsSection = () => {
   return (
     <section id="why-us" className="section-padding bg-secondary/30" ref={ref}>
       <div className="max-w-7xl mx-auto container-padding">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 md:gap-16 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-sm font-medium text-muted-foreground uppercase tracking-widest">Why Choose Us</span>
-            <h2 className="heading-lg mt-4 mb-6">
+            <span className="text-xs sm:text-sm font-medium text-muted-foreground uppercase tracking-widest">Why Choose Us</span>
+            <h2 className="heading-lg mt-3 sm:mt-4 mb-4 sm:mb-6 text-3xl sm:text-4xl md:text-5xl">
               Your Trusted Partner in Digital Innovation
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-base sm:text-lg text-muted-foreground mb-6 sm:mb-8">
               At Zenvexia Solutions, we don't just build software – we build lasting partnerships. Our commitment to excellence, innovation, and client success sets us apart.
             </p>
 
             {/* Achievements List */}
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
               {achievements.map((achievement, index) => (
                 <motion.div
                   key={achievement}
                   initial={{ opacity: 0, x: -20 }}
                   animate={isInView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
-                  className="flex items-center gap-3"
+                  className="flex items-start gap-2 sm:gap-3"
                 >
-                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                  <span className="text-sm text-muted-foreground">{achievement}</span>
+                  <CheckCircle2 className="w-4 sm:w-5 h-4 sm:h-5 text-primary flex-shrink-0 mt-0.5 sm:mt-1" />
+                  <span className="text-xs sm:text-sm text-muted-foreground">{achievement}</span>
                 </motion.div>
               ))}
             </div>
@@ -96,7 +96,7 @@ const WhyChooseUsSection = () => {
             initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid sm:grid-cols-2 gap-4"
+            className="grid sm:grid-cols-2 gap-3 sm:gap-4"
           >
             {reasons.map((reason, index) => (
               <motion.div
@@ -104,13 +104,13 @@ const WhyChooseUsSection = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                className="bg-background rounded-2xl p-6 border border-border hover:border-primary/50 hover:shadow-glass transition-all duration-300 group"
+                className="bg-background rounded-lg sm:rounded-2xl p-4 sm:p-6 border border-border hover:border-primary/50 hover:shadow-glass transition-all duration-300 group"
               >
-                <div className="w-12 h-12 bg-primary/20 rounded-xl flex items-center justify-center mb-4 group-hover:bg-primary/30 transition-colors">
-                  <reason.icon className="w-6 h-6 text-foreground" />
+                <div className="w-9 sm:w-12 h-9 sm:h-12 bg-primary/20 rounded-lg sm:rounded-xl flex items-center justify-center mb-2 sm:mb-4 group-hover:bg-primary/30 transition-colors">
+                  <reason.icon className="w-4.5 sm:w-6 h-4.5 sm:h-6 text-foreground" />
                 </div>
-                <h3 className="font-semibold text-lg mb-2">{reason.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">
+                <h3 className="font-semibold text-base sm:text-lg mb-1 sm:mb-2">{reason.title}</h3>
+                <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                   {reason.description}
                 </p>
               </motion.div>
