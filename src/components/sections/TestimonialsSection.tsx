@@ -66,13 +66,13 @@ const TestimonialsSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8 sm:mb-12"
         >
-          <span className="text-sm font-medium text-background/60 uppercase tracking-widest">Testimonials</span>
-          <h2 className="heading-lg mt-4 mb-6 text-background">
+          <span className="text-xs sm:text-sm font-medium text-background/60 uppercase tracking-widest">Testimonials</span>
+          <h2 className="heading-lg mt-3 sm:mt-4 mb-3 sm:mb-6 text-background text-3xl sm:text-4xl md:text-5xl">
             What Our Clients Say
           </h2>
-          <p className="text-lg text-background/70 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-background/70 max-w-2xl mx-auto px-2">
             Don't just take our word for it. Here's what our clients have to say about working with Zenvexia Solutions.
           </p>
         </motion.div>
@@ -83,11 +83,11 @@ const TestimonialsSection = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={isInView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-background/10 backdrop-blur-lg rounded-3xl p-8 md:p-12 border border-background/10"
+            className="bg-background/10 backdrop-blur-lg rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 lg:p-12 border border-background/10"
           >
             {/* Quote Icon */}
-            <div className="w-12 h-12 bg-primary/30 rounded-full flex items-center justify-center mb-8 mx-auto">
-              <Quote className="w-6 h-6 text-background" />
+            <div className="w-10 sm:w-12 h-10 sm:h-12 bg-primary/30 rounded-full flex items-center justify-center mb-4 sm:mb-6 md:mb-8 mx-auto">
+              <Quote className="w-5 sm:w-6 h-5 sm:h-6 text-background" />
             </div>
 
             {/* Testimonial Content */}
@@ -100,29 +100,29 @@ const TestimonialsSection = () => {
               className="text-center"
             >
               {/* Stars */}
-              <div className="flex justify-center gap-1 mb-6">
+              <div className="flex justify-center gap-0.5 sm:gap-1 mb-4 sm:mb-6">
                 {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-primary text-primary" />
+                  <Star key={i} className="w-4 sm:w-5 h-4 sm:h-5 fill-primary text-primary" />
                 ))}
               </div>
 
               {/* Quote */}
-              <p className="text-lg md:text-xl text-background/90 leading-relaxed mb-8">
+              <p className="text-base sm:text-lg md:text-xl text-background/90 leading-relaxed mb-6 sm:mb-8">
                 "{testimonials[currentIndex].content}"
               </p>
 
               {/* Author */}
-              <div className="flex items-center justify-center gap-4">
-                <div className="w-14 h-14 bg-primary/30 rounded-full flex items-center justify-center">
-                  <span className="text-lg font-semibold text-background">
+              <div className="flex items-center justify-center gap-2.5 sm:gap-4">
+                <div className="w-11 sm:w-14 h-11 sm:h-14 bg-primary/30 rounded-full flex items-center justify-center">
+                  <span className="text-base sm:text-lg font-semibold text-background">
                     {testimonials[currentIndex].avatar}
                   </span>
                 </div>
                 <div className="text-left">
-                  <div className="font-semibold text-background">
+                  <div className="font-semibold text-background text-sm sm:text-base">
                     {testimonials[currentIndex].name}
                   </div>
-                  <div className="text-sm text-background/60">
+                  <div className="text-xs sm:text-sm text-background/60">
                     {testimonials[currentIndex].role}
                   </div>
                 </div>
@@ -130,23 +130,23 @@ const TestimonialsSection = () => {
             </motion.div>
 
             {/* Navigation */}
-            <div className="flex items-center justify-center gap-4 mt-10">
+            <div className="flex items-center justify-center gap-2.5 sm:gap-4 mt-6 sm:mt-8 md:mt-10">
               <button
                 onClick={prevTestimonial}
-                className="w-12 h-12 rounded-full border border-background/20 flex items-center justify-center text-background/60 hover:bg-background/10 hover:text-background transition-colors"
+                className="w-9 sm:w-12 h-9 sm:h-12 rounded-full border border-background/20 flex items-center justify-center text-background/60 hover:bg-background/10 hover:text-background transition-colors"
                 aria-label="Previous testimonial"
               >
-                <ChevronLeft className="w-5 h-5" />
+                <ChevronLeft className="w-4 sm:w-5 h-4 sm:h-5" />
               </button>
 
               {/* Dots */}
-              <div className="flex gap-2">
+              <div className="flex gap-1.5 sm:gap-2">
                 {testimonials.map((_, index) => (
                   <button
                     key={index}
                     onClick={() => setCurrentIndex(index)}
-                    className={`w-2 h-2 rounded-full transition-all ${
-                      index === currentIndex ? 'w-8 bg-primary' : 'bg-background/30 hover:bg-background/50'
+                    className={`h-2 rounded-full transition-all ${
+                      index === currentIndex ? 'w-6 sm:w-8 bg-primary' : 'w-2 bg-background/30 hover:bg-background/50'
                     }`}
                     aria-label={`Go to testimonial ${index + 1}`}
                   />
@@ -155,10 +155,10 @@ const TestimonialsSection = () => {
 
               <button
                 onClick={nextTestimonial}
-                className="w-12 h-12 rounded-full border border-background/20 flex items-center justify-center text-background/60 hover:bg-background/10 hover:text-background transition-colors"
+                className="w-9 sm:w-12 h-9 sm:h-12 rounded-full border border-background/20 flex items-center justify-center text-background/60 hover:bg-background/10 hover:text-background transition-colors"
                 aria-label="Next testimonial"
               >
-                <ChevronRight className="w-5 h-5" />
+                <ChevronRight className="w-4 sm:w-5 h-4 sm:h-5" />
               </button>
             </div>
           </motion.div>
@@ -169,16 +169,16 @@ const TestimonialsSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-20"
+          className="mt-12 sm:mt-16 md:mt-20"
         >
-          <p className="text-center text-sm text-background/50 mb-8 uppercase tracking-widest">
+          <p className="text-center text-xs sm:text-sm text-background/50 mb-6 sm:mb-8 uppercase tracking-widest">
             Trusted by leading companies
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-6 md:gap-8 lg:gap-16">
             {['TechCorp', 'FinanceHub', 'HealthFirst', 'EduGlobal', 'LogiSmart'].map((company) => (
               <div
                 key={company}
-                className="text-xl md:text-2xl font-bold text-background/30 hover:text-background/50 transition-colors"
+                className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-background/30 hover:text-background/50 transition-colors"
               >
                 {company}
               </div>
